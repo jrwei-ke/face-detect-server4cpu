@@ -1,4 +1,10 @@
 
+## 安裝
+
+```bash
+git clone {URL}
+```
+
 ## Conda 環境
 
 ```bash
