@@ -2,7 +2,8 @@
 ## Conda 環境
 
 ```bash
-conda create -n env python=3.9
+conda create -n face_detect python=3.9
+conda activate face_detect
 pip install -r requirements.txt
 
 ```
