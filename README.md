@@ -1,8 +1,6 @@
 
 ## Conda 環境
 
-測試帳號密碼 **（請斟酌提供，建議只提供僅能觀看不能操作的帳號密碼）**
-
 ```bash
 conda create -n env python=3.9
 pip install -r requirements.txt
