@@ -3,13 +3,13 @@
 
 Based on ["Yunet"](https://opencv.org/blog/opencv-face-detection-cascade-classifier-vs-yunet/)
 
-## 安裝
+## Install
 
 ```bash
 git clone {URL}
 ```
 
-## Conda 環境
+## Conda Env
 
 ```bash
 conda create -n face_detect python=3.9
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ```
 
-## 啟動server
+## Run Server
 
 ```bash
 python app.py \
@@ -32,6 +32,7 @@ python app.py \
 ```bash
 docker compose up --build
 ```
+change host/port/model-path in docker-compose.yaml
 
 ## Test inference
 
