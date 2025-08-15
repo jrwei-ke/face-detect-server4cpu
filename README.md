@@ -39,3 +39,11 @@ change host/port/model-path in docker-compose.yaml
 ```bash
 python inference.py test.png --api_url http://localhost:5000
 ```
+
+API use
+
+```python
+image_data = base64.b64encode(encoded_image).decode('utf-8')
+payload = {'image': image_data}
+response = requests.post(api_url, json=payload, headers={'Content-Type': 'application/json'})
+```
