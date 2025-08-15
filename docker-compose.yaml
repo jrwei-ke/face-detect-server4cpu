@@ -1,0 +1,32 @@
+
+services:
+  face-detection-api:
+    build: .
+    container_name: face-detection-server
+    ports:
+      - "${API_PORT:-5000}:5000"
+    environment:
+      - FLASK_ENV=${FLASK_ENV:-production}
+    volumes:
+      # 掛載模型目錄
+      - ./models:/app/models
+      # 掛載應用程式碼（開發時使用）
+      - ./app.py:/app/app.py
+    command: >
+      python app.py
+      --host ${API_HOST:-0.0.0.0}
+      --port ${API_PORT:-5000}
+      --model-path ${MODEL_PATH:-/app/models/face_detection_yunet.onnx}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - face-detection-network
+
+networks:
+  face-detection-network:
+    driver: bridge
