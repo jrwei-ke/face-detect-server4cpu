@@ -11,10 +11,10 @@ pip install -r requirements.txt
 ## 啟動server
 
 ```bash
-python app.py
-      --host ${API_HOST:-0.0.0.0}
-      --port ${API_PORT:-5000}
-      --model-path ${MODEL_PATH:-/app/models/face_detection_yunet.onnx}
+python app.py \
+    --host 0.0.0.0 \
+    --port 5000 \
+    --model-path models/face_detection_yunet.onnx
 ```
 
 ## Docker 
