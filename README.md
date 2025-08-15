@@ -1,4 +1,8 @@
 
+## Reference
+
+Based on ["Yunet"](https://opencv.org/blog/opencv-face-detection-cascade-classifier-vs-yunet/)
+
 ## 安裝
 
 ```bash
