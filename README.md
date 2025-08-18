@@ -6,7 +6,7 @@ Based on ["Yunet"](https://opencv.org/blog/opencv-face-detection-cascade-classif
 ## Install
 
 ```bash
-git clone {URL}
+git clone https://github.com/jrwei-ke/face-detect-server4cpu.git
 ```
 
 ## Conda Env
