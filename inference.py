@@ -107,7 +107,7 @@ def detect_face_from_img(cv_image, api_url="http://localhost:5000/detect"):
         -1: 發生錯誤
     """
     try:
-        cv2.resize(img, (320, 320), interpolation=cv2.INTER_AREA)
+        cv_image = cv2.resize(cv_image, (0, 0),fx=0.5,fy=0.5, interpolation=cv2.INTER_AREA)
         # 先將 numpy 圖片編碼成 PNG（二進位）
         success, encoded_image = cv2.imencode('.png', cv_image)
         if not success:
@@ -140,16 +140,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
     # 測試健康檢查
     try:
-        health_response = requests.get("http://localhost:5000/health")
+        health_response = requests.get(args.api_url+"/health")
         print("Health check:", health_response.json())
     except:
         print("Server is not running")
         exit(1)
     
     img = cv2.imread(args.img_path)
-
     # 測試人臉偵測
-    result = detect_face_from_img(img)
+    result = detect_face_from_img(img,args.api_url+"/detect")
     
     if result == 1:
         print("偵測到人臉！")
