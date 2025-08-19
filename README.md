@@ -37,7 +37,7 @@ change host/port/model-path in docker-compose.yaml
 ## Test inference
 
 ```bash
-python inference.py test.png --api_url http://localhost:5000
+python inference.py test/test.png --api_url http://localhost:5000
 ```
 
 API use
